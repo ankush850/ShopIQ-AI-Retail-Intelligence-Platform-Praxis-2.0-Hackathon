@@ -1,5 +1,17 @@
 # ShopIQ-AI-Retail-Intelligence-Platform-Praxis-2.0-Hackathon
 
+![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Tailwind_CSS](https://img.shields.io/badge/Tailwind_CSS-4.2.0-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Analytics](https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=for-the-badge)
+![ML](https://img.shields.io/badge/ML-Affinity-8B5CF6?style=for-the-badge)
+![Data_Pipeline](https://img.shields.io/badge/Data-Pipeline-F59E0B?style=for-the-badge)
+![Dashboard_View](https://img.shields.io/badge/View-Dashboard-582FCE?style=for-the-badge)
+![Forecast_View](https://img.shields.io/badge/View-Forecast-22C55E?style=for-the-badge)
+
+
+
 A comprehensive data analytics platform with forecasting, shopper behavior analysis, and interactive visualizations built with Next.js and TypeScript.
 
 ## Features
