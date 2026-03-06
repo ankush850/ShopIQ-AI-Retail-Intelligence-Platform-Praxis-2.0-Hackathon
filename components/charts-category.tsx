@@ -17,7 +17,7 @@ interface CategoryPieChartProps {
 
 export function CategoryPieChart({ data }: CategoryPieChartProps) {
   return (
-    <Card className="border-border/50 bg-card">
+    <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium text-card-foreground">
           Category Distribution
@@ -39,7 +39,7 @@ export function CategoryPieChart({ data }: CategoryPieChartProps) {
                 animationDuration={800}
               >
                 {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.fill} />
+                  <Cell key={`cell-${index}`} fill={entry.fill} stroke="var(--card)" strokeWidth={2} />
                 ))}
               </Pie>
               <Tooltip
@@ -49,6 +49,7 @@ export function CategoryPieChart({ data }: CategoryPieChartProps) {
                   borderRadius: "0.75rem",
                   fontSize: 12,
                   color: "var(--card-foreground)",
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05)",
                 }}
                 formatter={(value: number) => [
                   `$${value.toLocaleString()}`,

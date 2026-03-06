@@ -10,10 +10,9 @@ import { ComparisonView } from "@/components/views/comparison-view"
 import { UploadView } from "@/components/views/upload-view"
 import { SettingsView } from "@/components/views/settings-view"
 import { BehaviorView } from "@/components/views/behavior-view"
-import { AiAssistantPanel } from "@/components/ai-assistant-panel"
 
 export function AppShell() {
-  const { view, sidebarOpen, assistantOpen, initializePrebuiltData } =
+  const { view, sidebarOpen, initializePrebuiltData } =
     useAppStore()
 
   useEffect(() => {
@@ -28,8 +27,8 @@ export function AppShell() {
       {/* Main Content */}
       <div className="flex flex-1 flex-col overflow-hidden">
         <TopNav />
-        <main className="flex-1 overflow-auto">
-          <div className="mx-auto max-w-[1440px] p-6">
+        <main className="flex-1 overflow-auto p-4 sm:p-6 lg:p-8">
+          <div className="mx-auto w-full max-w-[1440px]">
             {view === "dashboard" && <DashboardView />}
             {view === "forecast" && <ForecastView />}
             {view === "comparison" && <ComparisonView />}
@@ -40,8 +39,7 @@ export function AppShell() {
         </main>
       </div>
 
-      {/* Right AI Panel */}
-      {assistantOpen && <AiAssistantPanel />}
+      {/* Right AI Panel (Removed) */}
     </div>
   )
 }

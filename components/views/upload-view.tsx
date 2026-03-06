@@ -208,9 +208,9 @@ export function UploadView() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
+    <div className="mx-auto w-full max-w-3xl space-y-6">
       {/* Step Indicator */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2">
         {STEPS.map((step, i) => (
           <div key={step.key} className="flex items-center gap-2">
             <div
@@ -241,7 +241,7 @@ export function UploadView() {
 
       {/* Step 1: Upload */}
       {currentStep === "upload" && (
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardContent className="p-8">
             <div
               onDragOver={(e) => {
@@ -290,7 +290,7 @@ export function UploadView() {
       {/* Step 2: Validation */}
       {currentStep === "validation" && (
         <div className="space-y-4">
-          <Card className="border-border/50 bg-card">
+          <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm font-medium text-card-foreground">
@@ -411,7 +411,7 @@ export function UploadView() {
 
       {/* Step 3: Cleaning */}
       {currentStep === "cleaning" && (
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-card-foreground">
               Data Cleaning
@@ -445,7 +445,7 @@ export function UploadView() {
 
       {/* Step 4: Feature Engineering */}
       {currentStep === "engineering" && (
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-card-foreground">
               Feature Engineering
@@ -490,7 +490,7 @@ export function UploadView() {
 
       {/* Step 5: Training */}
       {currentStep === "training" && (
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-card-foreground">
               Model Training
@@ -519,7 +519,7 @@ export function UploadView() {
 
       {/* Step 6: Complete */}
       {currentStep === "complete" && (
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardContent className="flex flex-col items-center gap-4 p-8">
             <div className="rounded-full bg-accent/10 p-4">
               <CheckCircle2 className="h-8 w-8 text-accent" />
@@ -564,3 +564,5 @@ function StatCard({
     </div>
   )
 }
+
+

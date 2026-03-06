@@ -3,21 +3,32 @@
 import { useAppStore } from "@/lib/store"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Database, Cpu } from "lucide-react"
+import { Moon, Sun, Database, Cpu, Menu } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export function TopNav() {
-  const { mode, setMode, modelMetrics, activeData } = useAppStore()
+  const { mode, setMode, modelMetrics, activeData, toggleSidebar } = useAppStore()
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="flex h-14 items-center justify-between border-b border-border bg-card px-6">
-      <div className="flex items-center gap-4">
+    <header className="flex h-14 items-center justify-between border-b bg-card px-4 sm:px-6">
+      <div className="flex items-center gap-2 sm:gap-4">
+        {/* Mobile Menu Toggle */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-8 w-8 md:hidden"
+          onClick={toggleSidebar}
+        >
+          <Menu className="h-4 w-4" />
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+
         {/* Mode Toggle */}
-        <div className="flex items-center gap-1 rounded-lg bg-secondary p-0.5">
+        <div className="hidden items-center gap-1 rounded-lg bg-secondary p-0.5 border sm:flex">
           <button
             onClick={() => setMode("prebuilt")}
-            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
               mode === "prebuilt"
                 ? "bg-card text-foreground shadow-sm"
                 : "text-muted-foreground hover:text-foreground"
@@ -27,7 +38,7 @@ export function TopNav() {
           </button>
           <button
             onClick={() => setMode("analysis")}
-            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+            className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
               mode === "analysis"
                 ? "bg-card text-foreground shadow-sm"
                 : "text-muted-foreground hover:text-foreground"
@@ -40,7 +51,7 @@ export function TopNav() {
         {/* Dataset Indicator */}
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Database className="h-3.5 w-3.5" />
-          <span>
+          <span className="hidden lg:inline">
             {mode === "prebuilt" ? "Internal Dataset" : activeData ? "User Dataset" : "No Dataset"}
           </span>
           {activeData && (
@@ -51,10 +62,10 @@ export function TopNav() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         {/* Model Status */}
         {modelMetrics && (
-          <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-2 sm:flex">
             <Cpu className="h-3.5 w-3.5 text-accent" />
             <Badge
               variant="outline"

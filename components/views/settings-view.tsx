@@ -22,7 +22,7 @@ export function SettingsView() {
       </div>
 
       {/* Appearance */}
-      <Card className="border-border/50 bg-card">
+      <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <Palette className="h-4 w-4 text-primary" />
@@ -50,7 +50,7 @@ export function SettingsView() {
       </Card>
 
       {/* Dataset Info */}
-      <Card className="border-border/50 bg-card">
+      <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <Database className="h-4 w-4 text-primary" />
@@ -62,13 +62,13 @@ export function SettingsView() {
         <CardContent className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">Current Mode</span>
-            <Badge variant="secondary">
+            <Badge variant="secondary" className="border-border/60 text-foreground">
               {mode === "prebuilt" ? "Prebuilt" : "Analysis"}
             </Badge>
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">Total Rows</span>
-            <span className="text-sm font-mono text-card-foreground">
+            <span className="text-sm font-mono text-foreground">
               {activeData?.summary.totalRows.toLocaleString() || "--"}
             </span>
           </div>
@@ -88,7 +88,7 @@ export function SettingsView() {
       </Card>
 
       {/* Model Info */}
-      <Card className="border-border/50 bg-card">
+      <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2">
             <Cpu className="h-4 w-4 text-primary" />
@@ -102,7 +102,7 @@ export function SettingsView() {
             <>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Version</span>
-                <Badge variant="outline" className="font-mono">
+                <Badge variant="outline" className="font-mono border-border/60 text-foreground">
                   {modelMetrics.version}
                 </Badge>
               </div>
@@ -110,7 +110,7 @@ export function SettingsView() {
                 <span className="text-sm text-muted-foreground">
                   R{"\u00B2"} Score
                 </span>
-                <span className="text-sm font-mono text-accent">
+                <span className="text-sm font-mono text-[#06ffa5]">
                   {modelMetrics.r2.toFixed(3)}
                 </span>
               </div>

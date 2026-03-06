@@ -79,7 +79,7 @@ export function ForecastView() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-semibold text-foreground">
+          <h2 className="text-lg font-semibold text-card-foreground">
             Revenue Forecast
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -87,7 +87,7 @@ export function ForecastView() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <Badge variant="outline" className="font-mono text-xs">
+          <Badge variant="outline" className="font-mono text-xs border-border text-foreground">
             R{"\u00B2"}: {modelMetrics.r2.toFixed(3)}
           </Badge>
           <Badge variant="outline" className="border-accent/30 text-accent text-xs">
@@ -97,7 +97,7 @@ export function ForecastView() {
       </div>
 
       {/* Main Forecast Chart */}
-      <Card className="border-border/50 bg-card">
+      <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-card-foreground">
             Historical & Projected Revenue
@@ -109,15 +109,15 @@ export function ForecastView() {
               <AreaChart data={combined}>
                 <defs>
                   <linearGradient id="histGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="var(--chart-1)" stopOpacity={0.15} />
-                    <stop offset="95%" stopColor="var(--chart-1)" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#00d4ff" stopOpacity={0.15} />
+                    <stop offset="95%" stopColor="#00d4ff" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="predGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="var(--chart-2)" stopOpacity={0.15} />
-                    <stop offset="95%" stopColor="var(--chart-2)" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#06ffa5" stopOpacity={0.15} />
+                    <stop offset="95%" stopColor="#06ffa5" stopOpacity={0} />
                   </linearGradient>
                   <linearGradient id="confGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="var(--chart-2)" stopOpacity={0.08} />
+                    <stop offset="5%" stopColor="#06ffa5" stopOpacity={0.08} />
                     <stop offset="95%" stopColor="var(--chart-2)" stopOpacity={0.02} />
                   </linearGradient>
                 </defs>
@@ -145,10 +145,11 @@ export function ForecastView() {
                     borderRadius: "0.75rem",
                     fontSize: 12,
                     color: "var(--card-foreground)",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05)",
                   }}
-                  formatter={(value: number | null, name: string) => {
+                  formatter={(value: any, name: string) => {
                     if (value == null) return ["-", name]
-                    return [`$${value.toLocaleString()}`, name]
+                    return [`$${(typeof value === 'number' ? value : 0).toLocaleString()}`, name]
                   }}
                 />
                 {/* Confidence band */}
@@ -212,7 +213,7 @@ export function ForecastView() {
       {/* Bottom row: Forecast Table + Anomalies */}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {/* Forecast Table */}
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Forecast Details
@@ -266,7 +267,7 @@ export function ForecastView() {
         </Card>
 
         {/* Anomaly Detection */}
-        <Card className="border-border/50 bg-card">
+        <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Anomaly Detection

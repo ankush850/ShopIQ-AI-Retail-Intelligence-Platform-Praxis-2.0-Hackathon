@@ -56,7 +56,7 @@ export function KPICards({ data }: KPICardsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
-        <Card key={card.title} className="border-border/50 bg-card">
+        <Card key={card.title} className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
           <CardContent className="p-5">
             <div className="flex items-start justify-between">
               <div className="space-y-2">
@@ -67,7 +67,7 @@ export function KPICards({ data }: KPICardsProps) {
                   {card.value}
                 </p>
               </div>
-              <div className={`rounded-lg p-2 ${card.bgColor}`}>
+              <div className={`rounded-lg p-2 ${card.bgColor.replace('/10', '/15')} border border-border/60`}>
                 <card.icon className={`h-4 w-4 ${card.color}`} />
               </div>
             </div>
@@ -80,7 +80,7 @@ export function KPICards({ data }: KPICardsProps) {
                     type="monotone"
                     dataKey="v"
                     stroke="currentColor"
-                    strokeWidth={1.5}
+                    strokeWidth={2}
                     dot={false}
                     className={card.color}
                   />

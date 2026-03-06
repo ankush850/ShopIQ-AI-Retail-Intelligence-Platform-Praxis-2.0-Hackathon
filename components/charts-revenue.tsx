@@ -30,7 +30,7 @@ export function RevenueChart({ data, forecast }: RevenueChartProps) {
   ]
 
   return (
-    <Card className="border-border/50 bg-card">
+    <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium text-card-foreground">
           Revenue Trend & Forecast
@@ -42,7 +42,7 @@ export function RevenueChart({ data, forecast }: RevenueChartProps) {
             <AreaChart data={combined}>
               <defs>
                 <linearGradient id="revGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="var(--chart-1)" stopOpacity={0.15} />
+                  <stop offset="5%" stopColor="var(--chart-1)" stopOpacity={0.1} />
                   <stop offset="95%" stopColor="var(--chart-1)" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="forecastGradient" x1="0" y1="0" x2="0" y2="1">
@@ -74,6 +74,7 @@ export function RevenueChart({ data, forecast }: RevenueChartProps) {
                   borderRadius: "0.75rem",
                   fontSize: 12,
                   color: "var(--card-foreground)",
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05)",
                 }}
                 formatter={(value: number) => [
                   `$${value.toLocaleString()}`,
@@ -84,10 +85,10 @@ export function RevenueChart({ data, forecast }: RevenueChartProps) {
                 type="monotone"
                 dataKey="revenue"
                 stroke="var(--chart-1)"
-                strokeWidth={2}
+                strokeWidth={2.5}
                 fill="url(#revGradient)"
                 dot={false}
-                activeDot={{ r: 4, fill: "var(--chart-1)" }}
+                activeDot={{ r: 5, fill: "var(--chart-1)", stroke: "var(--card)", strokeWidth: 2 }}
               />
               {forecast && forecast.length > 0 && (
                 <>

@@ -175,7 +175,7 @@ export function BehaviorView() {
         <CardContent className="flex flex-col items-center justify-center gap-4 py-12">
           <AlertCircle className="h-12 w-12 text-amber-600" />
           <div className="text-center space-y-2">
-            <h3 className="font-semibold text-foreground">
+            <h3 className="font-semibold text-card-foreground">
               Customer ID column required
             </h3>
             <p className="text-sm text-muted-foreground max-w-md">
@@ -210,7 +210,7 @@ export function BehaviorView() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-card-foreground flex items-center gap-2">
           <Users className="h-5 w-5" />
           Shopper Behavior Patterns & Affinity Discovery
         </h2>
@@ -220,7 +220,7 @@ export function BehaviorView() {
       </div>
 
       {/* Data prep summary */}
-      <Card className="border-border/50 bg-card">
+      <Card className="">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-card-foreground">
             Data preparation
@@ -237,9 +237,9 @@ export function BehaviorView() {
 
       {/* RFM */}
       <div className="space-y-4">
-        <h3 className="text-base font-medium text-foreground">RFM analysis</h3>
+        <h3 className="text-base font-medium text-card-foreground">RFM analysis</h3>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <Card className="border-border/50 bg-card">
+          <Card className="">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-card-foreground">
                 RFM segment distribution
@@ -284,7 +284,7 @@ export function BehaviorView() {
               )}
             </CardContent>
           </Card>
-          <Card className="border-border/50 bg-card">
+          <Card className="">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-card-foreground">
                 Revenue contribution per segment
@@ -334,7 +334,7 @@ export function BehaviorView() {
             </CardContent>
           </Card>
         </div>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Segment growth trend over time
@@ -344,7 +344,7 @@ export function BehaviorView() {
             <RFMSegmentTrendChart data={r.segmentTrend} />
           </CardContent>
         </Card>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               RFM interpretation
@@ -366,11 +366,11 @@ export function BehaviorView() {
 
       {/* Clustering */}
       <div className="space-y-4">
-        <h3 className="text-base font-medium text-foreground">
+        <h3 className="text-base font-medium text-card-foreground">
           Customer segmentation (clustering)
         </h3>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <Card className="border-border/50 bg-card">
+          <Card className="">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-card-foreground">
                 Segment size distribution
@@ -407,7 +407,7 @@ export function BehaviorView() {
               )}
             </CardContent>
           </Card>
-          <Card className="border-border/50 bg-card">
+          <Card className="">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-card-foreground">
                 Revenue share per segment
@@ -450,7 +450,7 @@ export function BehaviorView() {
             </CardContent>
           </Card>
         </div>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Segment trend over time
@@ -460,7 +460,7 @@ export function BehaviorView() {
             <ClusterTrendChart data={c.segmentTrend} />
           </CardContent>
         </Card>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Clustering interpretation
@@ -483,10 +483,10 @@ export function BehaviorView() {
 
       {/* Affinity */}
       <div className="space-y-4">
-        <h3 className="text-base font-medium text-foreground">
+        <h3 className="text-base font-medium text-card-foreground">
           Affinity discovery (market basket)
         </h3>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Top association rules (lift &gt; 1)
@@ -499,7 +499,7 @@ export function BehaviorView() {
                 {a.topRules.map((rule, i) => (
                   <li
                     key={i}
-                    className="rounded-lg border border-border bg-muted/30 p-3 text-sm"
+                    className="rounded-lg border border-border bg-secondary/50 p-3 text-sm"
                   >
                     <span className="font-medium">
                       {rule.antecedent.join(", ")} → {rule.consequent.join(", ")}
@@ -526,10 +526,10 @@ export function BehaviorView() {
 
       {/* Behavioral patterns */}
       <div className="space-y-4">
-        <h3 className="text-base font-medium text-foreground">
+        <h3 className="text-base font-medium text-card-foreground">
           Behavioral pattern analysis
         </h3>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Behavior distribution
@@ -573,7 +573,7 @@ export function BehaviorView() {
             ) : null}
           </CardContent>
         </Card>
-        <Card className="border-border/50 bg-card">
+        <Card className="">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Behavioral insights (from data)
@@ -606,3 +606,7 @@ export function BehaviorView() {
     </div>
   )
 }
+
+
+
+

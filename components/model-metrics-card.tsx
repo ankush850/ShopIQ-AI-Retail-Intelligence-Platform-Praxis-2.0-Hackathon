@@ -17,13 +17,13 @@ export function ModelMetricsCard({ metrics }: ModelMetricsCardProps) {
         : "text-destructive"
 
   return (
-    <Card className="border-border/50 bg-card">
+    <Card className="transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(255,255,255,0.05)]">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
           <CardTitle className="text-sm font-medium text-card-foreground">
             Model Evaluation
           </CardTitle>
-          <Badge variant="outline" className="text-xs font-mono">
+          <Badge variant="outline" className="text-xs font-mono border-border text-foreground">
             {metrics.version}
           </Badge>
         </div>

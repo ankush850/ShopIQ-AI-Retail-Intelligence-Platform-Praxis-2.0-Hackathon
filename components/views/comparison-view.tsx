@@ -100,7 +100,7 @@ export function ComparisonView() {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <Card className="border-border/50 bg-card">
+        <Card className="border-border bg-gradient-to-br  shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300">
           <CardContent className="p-5">
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
               Baseline Revenue
@@ -113,7 +113,7 @@ export function ComparisonView() {
             </Badge>
           </CardContent>
         </Card>
-        <Card className="border-border/50 bg-card">
+        <Card className="border-border bg-gradient-to-br  shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300">
           <CardContent className="p-5">
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
               User Revenue
@@ -128,7 +128,7 @@ export function ComparisonView() {
             )}
           </CardContent>
         </Card>
-        <Card className="border-border/50 bg-card">
+        <Card className="border-border bg-gradient-to-br  shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300">
           <CardContent className="p-5">
             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
               Difference
@@ -145,7 +145,7 @@ export function ComparisonView() {
       </div>
 
       {/* Revenue Comparison Line Chart */}
-      <Card className="border-border/50 bg-card">
+      <Card className="border-border bg-gradient-to-br  shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-card-foreground">
             Revenue Trend Comparison
@@ -216,7 +216,7 @@ export function ComparisonView() {
 
       {/* Category Comparison */}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <Card className="border-border/50 bg-card">
+        <Card className="border-border bg-gradient-to-br  shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               Baseline Categories
@@ -255,7 +255,7 @@ export function ComparisonView() {
           </CardContent>
         </Card>
 
-        <Card className="border-border/50 bg-card">
+        <Card className="border-border bg-gradient-to-br  shadow-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.05)] transition-all duration-300">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-card-foreground">
               {hasUserData ? "User Categories" : "No User Data"}
@@ -305,3 +305,5 @@ export function ComparisonView() {
     </div>
   )
 }
+
+
