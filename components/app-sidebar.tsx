@@ -10,6 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Users,
+  LogOut,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAppStore } from "@/lib/store"
@@ -28,6 +29,10 @@ const NAV_ITEMS: { icon: typeof LayoutDashboard; label: string; view: AppView }[
 
 export function AppSidebar({ open }: { open: boolean }) {
   const { view, setView, toggleSidebar } = useAppStore()
+
+  const handleBackToHome = () => {
+    window.location.href = '/'
+  }
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -87,9 +92,20 @@ export function AppSidebar({ open }: { open: boolean }) {
             variant="ghost"
             size="sm"
             onClick={toggleSidebar}
-            className="w-full justify-center"
+            className="w-full justify-center mb-2"
           >
             {open ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+          </Button>
+          
+          {/* Back to Home Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleBackToHome}
+            className="w-full justify-center text-muted-foreground hover:text-foreground"
+          >
+            <LogOut className="h-4 w-4 shrink-0" />
+            {open && <span>Back to Home</span>}
           </Button>
         </div>
       </aside>

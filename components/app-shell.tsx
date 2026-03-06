@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import { motion } from "framer-motion"
 import { useAppStore } from "@/lib/store"
 import { AppSidebar } from "@/components/app-sidebar"
 import { TopNav } from "@/components/top-nav"
@@ -20,7 +21,12 @@ export function AppShell() {
   }, [initializePrebuiltData])
 
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <motion.div 
+      className="flex h-screen overflow-hidden bg-background"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       {/* Left Sidebar */}
       <AppSidebar open={sidebarOpen} />
 
@@ -40,6 +46,6 @@ export function AppShell() {
       </div>
 
       {/* Right AI Panel (Removed) */}
-    </div>
+    </motion.div>
   )
 }
