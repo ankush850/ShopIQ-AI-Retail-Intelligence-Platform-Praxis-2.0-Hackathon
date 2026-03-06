@@ -7,7 +7,7 @@
 ![Analytics](https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=for-the-badge)
 ![ML](https://img.shields.io/badge/ML-Affinity-8B5CF6?style=for-the-badge)
 ![Data_Pipeline](https://img.shields.io/badge/Data-Pipeline-F59E0B?style=for-the-badge)
-![Deploy](https://img.shields.io/badge/Deploy-Render-000000?style=for-the-badge&logo=render&logoColor=white)
+
 
 **Production-Ready Retail Analytics Platform** with AI-powered insights, forecasting, and shopper behavior analysis.
 
@@ -369,3 +369,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Support
 
 For support, please open an issue in the GitHub repository.
+
