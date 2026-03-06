@@ -7,6 +7,11 @@
 ![Analytics](https://img.shields.io/badge/Analytics-Behavior-3B82F6?style=for-the-badge)
 ![ML](https://img.shields.io/badge/ML-Affinity-8B5CF6?style=for-the-badge)
 ![Data_Pipeline](https://img.shields.io/badge/Data-Pipeline-F59E0B?style=for-the-badge)
+![Deploy](https://img.shields.io/badge/Deploy-Render-000000?style=for-the-badge&logo=render&logoColor=white)
+
+**Production-Ready Retail Analytics Platform** with AI-powered insights, forecasting, and shopper behavior analysis.
+
+✨ **Recently Updated:** Enhanced responsive design, error handling, and production deployment configuration.
 
 
 
@@ -19,7 +24,7 @@ A comprehensive data analytics platform with forecasting, shopper behavior analy
 - **Shopper Behavior Analysis**: Advanced customer segmentation using RFM analysis and clustering
 - **Market Basket Analysis**: Discover product affinities and purchasing patterns
 - **Data Upload & Processing**: Upload CSV files and automatically process them
-- **AI Assistant**: Integrated AI-powered insights and recommendations
+- **🆕 Custom Local AI Assistant**: Free, privacy-focused AI that answers questions about your data - no API costs!
 - **Responsive Design**: Works seamlessly across desktop and tablet devices
 
 ## Tech Stack
@@ -44,24 +49,41 @@ The application provides multiple perspectives for data analysis:
 - **Upload**: Data import and preprocessing workflow
 - **Settings**: Application configuration options
 
-## Installation
+## Quick Start
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
+```bash
+# 1. Install dependencies
+npm install
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+# 2. Set up environment variables
+cp .env.example .env.local
+# Edit .env.local and add your OPENAI_API_KEY
 
-3. Run the development server:
-   ```bash
-   npm  run dev
-   ```
+# 3. Run development server
+npm run dev
+```
 
-4. Open your browser to [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000)
+
+📚 **See [QUICKSTART.md](QUICKSTART.md) for detailed setup instructions**
+
+## Deployment
+
+### Deploy to Render (Recommended)
+
+```bash
+# Push to Git
+git add . && git commit -m "Update" && git push
+
+# Render will auto-deploy
+```
+
+🚀 **See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment guide**
+
+### Alternative Platforms
+- ✅ Vercel: `vercel` command
+- ✅ Netlify: `netlify deploy`
+- ✅ Railway: `railway up`
 
 ## Usage
 
@@ -89,13 +111,18 @@ The application provides multiple perspectives for data analysis:
 ├── components/             # Reusable UI components
 │   ├── ui/                 # Base UI components (buttons, cards, etc.)
 │   └── views/              # Page-level components
+│   ├── error-boundary.tsx  # Error handling
+│   └── theme-provider.tsx  # Theme management
 ├── lib/                    # Shared utilities and business logic
 │   ├── store.ts            # Zustand store for state management
 │   ├── types.ts            # Type definitions
 │   ├── behavior-analysis.ts # Shopper behavior algorithms
 │   └── data-processing.ts  # Data processing utilities
 ├── public/                 # Static assets
-└── styles/                 # Global styles
+├── styles/                 # Global styles
+├── .env.example            # Environment variables template
+├── render.yaml             # Render deployment config
+└── DEPLOYMENT.md           # Deployment guide
 ```
 
 ## System Architecture
@@ -251,6 +278,32 @@ graph TD
 4. Commit your changes (`git commit -m 'Add amazing feature'`)
 5. Push to the branch (`git push origin feature/amazing-feature`)
 6. Open a Pull Request
+
+## Recent Updates & Fixes
+
+### v1.0.0 - Production Ready Release ✨
+
+**Fixed:**
+- ✅ Added comprehensive error handling with ErrorBoundary component
+- ✅ Improved responsive design for mobile devices
+- ✅ Fixed sidebar positioning on mobile
+- ✅ Added mobile menu toggle button
+- ✅ Enhanced upload view for better UX
+- ✅ Configured production deployment (Render, Vercel, Netlify)
+- ✅ Added environment variable configuration
+- ✅ Created comprehensive documentation
+
+**Added:**
+- ✅ `.env.example` template
+- ✅ `render.yaml` deployment configuration
+- ✅ Error boundary component
+- ✅ Mobile-responsive navigation
+- ✅ Security headers
+- ✅ Quick start guide
+- ✅ Deployment guide
+- ✅ Fixes summary document
+
+📄 **See [FIXES_SUMMARY.md](FIXES_SUMMARY.md) for complete details**
 
 ## Architecture Overview
 
